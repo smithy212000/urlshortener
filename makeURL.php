@@ -23,8 +23,8 @@
 		}
 	}
 		mkdir($random); // Make a directory that's name is the random sequence.
-		$shortIndex = fopen(($random . "/index.php"), "w"); // Open a new file in the directory called index.php.
-		fwrite($shortIndex, ('<?php header("Location: ' . $origURL . '"); ?>')); // Place PHP code inside the file that redirects to the URL entered in the HTML form.
+		$shortIndex = fopen(($random . "/index.html"), "w"); // Open a new file in the directory called index.html.
+		fwrite($shortIndex, ('<html><head><meta http-equiv="refresh" content="0; url=' . $domain . '/' . $random . '" /></head></html>')); // Place HTML inside the file that redirects to the URL entered in the HTML form.
 		fclose($shortIndex); // Close the file.
 		echo '<a href="' . $domain .  '/' . $random . '">' . $domain . '/' . $random . '</a>'; // Print the short URL.
 ?>
